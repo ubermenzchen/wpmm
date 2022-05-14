@@ -2,12 +2,16 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"os/signal"
 )
 
 func main() {
-	ctx, _ := signal.NotifyContext(context.Background(), os.Interrupt, os.Kill)
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, os.Kill)
+
+	fmt.Println("Hello World!")
+	cancel()
 
 	<-ctx.Done()
 }
