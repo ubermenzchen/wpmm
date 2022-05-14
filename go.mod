@@ -1,3 +1,3 @@
-module github.com/ubermenzchen/wpmm
+module wpmm
 
 go 1.18
